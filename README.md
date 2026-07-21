@@ -20,8 +20,11 @@ Python 3 (or higher)
 > (seriously, who the hell uses Python 2?)
 
 Pair of hands (minimum 2 fingers recommended)
+
 A computer
+
 A keyboard
+
 900 GB of DDR5 RAM
 
 > Hehe i gotchu you dont actually need the last one
