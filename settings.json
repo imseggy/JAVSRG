@@ -1,0 +1,11 @@
+{
+    "key_mapping": {
+        "left": 97,
+        "down": 115,
+        "up": 107,
+        "right": 108
+    },
+    "volume": 0.8,
+    "scroll_speed": 0.7,
+    "offset_ms": 0
+}
