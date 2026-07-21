@@ -1,4 +1,4 @@
-## Installation
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/05108098-f06c-4ecb-ac24-aa35ecb1be2c" />## Installation
 
 Requirements:
 - Python 3 (seriously, who the hell uses Python 2?)
@@ -36,3 +36,9 @@ Editor's note
 ## Gameplay
 
 > Use ASKL to press the falling arrows simple enough right?
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a6dd1229-4591-40ce-b309-33799d21fd5d" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4a973468-46f3-400a-89ae-3803565cc719" />
+
+
