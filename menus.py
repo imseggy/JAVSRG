@@ -85,25 +85,25 @@ def settings_menu(screen, font, big_font, settings):
                     selected_option = (selected_option + 1) % len(options)
 
                 elif event.key == pygame.K_LEFT:
-                    if selected_option == 4:  # Volume
+                    if selected_option == 4:
                         settings["volume"] = max(0.0, round(settings["volume"] - 0.05, 2))
-                    elif selected_option == 5:  # Scroll Speed
+                    elif selected_option == 5:
                         settings["scroll_speed"] = max(0.1, round(settings["scroll_speed"] - 0.1, 2))
-                    elif selected_option == 6:  # Offset
+                    elif selected_option == 6:
                         settings["offset_ms"] -= 5
 
                 elif event.key == pygame.K_RIGHT:
-                    if selected_option == 4:  # Volume
+                    if selected_option == 4:
                         settings["volume"] = min(1.0, round(settings["volume"] + 0.05, 2))
-                    elif selected_option == 5:  # Scroll Speed
+                    elif selected_option == 5:
                         settings["scroll_speed"] = min(3.0, round(settings["scroll_speed"] + 0.1, 2))
-                    elif selected_option == 6:  # Offset
+                    elif selected_option == 6:
                         settings["offset_ms"] += 5
 
                 elif event.key == pygame.K_RETURN:
                     if selected_option < 4:
                         rebinding_dir = DIRECTIONS[selected_option]
-                    elif selected_option == 7:  # Save and exit
+                    elif selected_option == 7:
                         save_settings(settings)
                         return settings
 

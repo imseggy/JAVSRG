@@ -1,3 +1,5 @@
+# Pretty self explanatory, just the settings. Even the littlest things can matter :)
+
 import os
 import json
 import pygame

@@ -1,4 +1,4 @@
-# Just the JSON utilities, pretty cool i say
+# Just the JSON utilities, pretty cool i say. Not as cool as you tho ;)
 
 import os
 import json

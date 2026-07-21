@@ -42,36 +42,29 @@ class Editor:
     def __init__(self, screen):
         self.screen = screen
 
-        # UI & Font Setup
         FONT_STACK = "ubuntu,aller,cantarell,dejavusans,sans-serif"
         self.font = pygame.font.SysFont(FONT_STACK, 20, bold=True)
         self.big_font = pygame.font.SysFont(FONT_STACK, 32, bold=True)
 
-        # Dimensions
         self.lane_width = 92
         self.rec_radius = (self.lane_width - 14) // 2
 
-        # Settings
         self.scroll_speed = 0.45
         self.load_settings()
 
-        # Chart State
         self.filename = "new_chart.json"
         self.song_path = ""
         self.bpm = 120.0
 
-        # Time & Grid State
         self.current_time_ms = 0.0
-        self.notes_dict = {}  # int(time_ms) -> ['o', '.', '.', 'o']
+        self.notes_dict = {}
         self.snap_divisions = [4, 8, 16, 32]
         self.snap_idx = 0
 
-        # Playback State
         self.is_playing = False
         self.play_start_time_ms = 0.0
         self.last_ticks = pygame.time.get_ticks()
 
-        # Overlays
         self.selecting_chart = False
         self.available_charts = []
         self.selector_idx = 0
@@ -113,11 +106,11 @@ class Editor:
 
     def refresh_song_list(self):
         songs = []
-        # Search root directory
+
         for f in os.listdir('.'):
             if f.lower().endswith(AUDIO_EXTS) and os.path.isfile(f):
                 songs.append(f)
-        # Search songs directory
+
         if os.path.exists(SONGS_DIR):
             for f in os.listdir(SONGS_DIR):
                 if f.lower().endswith(AUDIO_EXTS):
@@ -291,12 +284,10 @@ class Editor:
         receptor_y = int(screen_h * 0.83)
         grid_x_start = (screen_w - (self.lane_width * 4)) // 2
 
-        # 1. Lane Backgrounds
         for i in range(4):
             x = grid_x_start + i * self.lane_width
             pygame.draw.rect(self.screen, (18, 20, 28), (x, 0, self.lane_width - 2, screen_h))
 
-        # 2. Grid Lines
         snap_ms = self.get_snap_ms()
         visible_time_window = screen_h / self.scroll_speed
         min_time = self.current_time_ms - 200
@@ -313,7 +304,6 @@ class Editor:
                 pygame.draw.line(self.screen, line_color, (grid_x_start, y), (grid_x_start + 4 * self.lane_width, y), 2 if is_full_beat else 1)
             t += snap_ms
 
-        # 3. Notes
         for time_ms, line in self.notes_dict.items():
             y = receptor_y - (time_ms - self.current_time_ms) * self.scroll_speed
             if -50 <= y <= screen_h + 50:
@@ -329,7 +319,6 @@ class Editor:
                             outline_thickness=2
                         )
 
-        # 4. Receptors
         for i in range(4):
             x = grid_x_start + i * self.lane_width + self.lane_width // 2
             center = (x, receptor_y)
@@ -344,7 +333,6 @@ class Editor:
 
         pygame.draw.line(self.screen, (255, 255, 255), (grid_x_start, receptor_y), (grid_x_start + 4 * self.lane_width, receptor_y), 2)
 
-        # 5. Sidebar UI
         panel_w = grid_x_start - 40
         if panel_w > 200:
             sidebar = pygame.Surface((panel_w, screen_h - 40), pygame.SRCALPHA)
@@ -377,7 +365,6 @@ class Editor:
                 rendered = f.render(txt, True, color)
                 self.screen.blit(rendered, (35, 35 + idx * 24))
 
-        # 6. Overlays
         if self.selecting_chart:
             self.draw_chart_selector()
         elif self.selecting_song:
@@ -495,21 +482,20 @@ def main():
                     mods = pygame.key.get_mods()
                     is_shift_down = bool(mods & pygame.KMOD_SHIFT)
 
-                    if event.button == 1:  # Left Click
+                    if event.button == 1:
                         editor.handle_click(event.pos)
 
-                    elif event.button == 4:  # Scroll Up (Rewind)
+                    elif event.button == 4:
                         step = 10.0 if is_shift_down else editor.get_snap_ms()
                         editor.current_time_ms = max(0.0, editor.current_time_ms - step)
                         editor.resync_audio_if_playing()
 
-                    elif event.button == 5:  # Scroll Down (Forward)
+                    elif event.button == 5:
                         step = 10.0 if is_shift_down else editor.get_snap_ms()
                         editor.current_time_ms += step
                         editor.resync_audio_if_playing()
 
             elif event.type == pygame.KEYDOWN:
-                # 1. SONG SELECTOR CONTROLS
                 if editor.selecting_song:
                     if event.key == pygame.K_UP:
                         if editor.available_songs:
@@ -527,7 +513,6 @@ def main():
                     elif event.key == pygame.K_s or event.key == pygame.K_ESCAPE:
                         editor.finalize_new_chart("")
 
-                # 2. CHART SELECTOR CONTROLS
                 elif editor.selecting_chart:
                     if event.key == pygame.K_ESCAPE or event.key == pygame.K_o:
                         editor.selecting_chart = False
@@ -549,7 +534,6 @@ def main():
                     elif event.key == pygame.K_n:
                         editor.start_new_chart_flow()
 
-                # 3. MAIN EDITOR CONTROLS
                 else:
                     if event.key == pygame.K_s and (pygame.key.get_mods() & pygame.KMOD_CTRL):
                         editor.save_chart()
