@@ -1,5 +1,3 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/05108098-f06c-4ecb-ac24-aa35ecb1be2c" />## Installation
-
 Requirements:
 - Python 3 (seriously, who the hell uses Python 2?)
 
@@ -37,8 +35,16 @@ Editor's note
 
 > Use ASKL to press the falling arrows simple enough right?
 
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a6dd1229-4591-40ce-b309-33799d21fd5d" />
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4a973468-46f3-400a-89ae-3803565cc719" />
 
+## Chart Editor
+
+> Just click to press arrows there are keybinds in the left lel
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/72695493-c33f-4297-8821-21d8e2c7369e" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b4f429b2-d469-40ab-a0ab-d5b3d034d3be" />
 
