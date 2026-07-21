@@ -7,3 +7,18 @@ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+## Running
+
+```bash
+python main.py
+```
+Shocking i know
+
+## Requirements
+
+-- Python 3 (or higher)
+-- Pair of fingers
+-- A computer
+-- A CPU
