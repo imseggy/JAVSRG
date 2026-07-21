@@ -15,6 +15,7 @@ python main.py
 ```
 > Shocking, I know.
 
+
 Requirements:
 
 Python 3 (or higher)
@@ -25,6 +26,8 @@ A keyboard
 900 GB of DDR5 RAM
 
 > Hehe i gotchu you dont actually need the last one
+
+
 
 Editor's note
 
