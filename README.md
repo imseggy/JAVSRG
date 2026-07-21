@@ -32,3 +32,7 @@ A keyboard
 Editor's note
 
 > What? You thought i was actually gonna give some helpful tips and guide you? Welcome to Earth kiddo
+
+## Gameplay
+
+> Use ASKL to press the falling arrows simple enough right?
