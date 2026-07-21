@@ -19,6 +19,9 @@ Shocking i know
 ## Requirements
 
 -- Python 3 (or higher)
--- Pair of fingers
--- A computer
--- A CPU
+
+-- Pair of hands (Minimum 2 fingers)
+
+-- A Computer
+
+-- A Keyboard
