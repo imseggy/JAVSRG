@@ -1,11 +1,9 @@
 ## Installation
 
--- Get Python!!! (Use Python 3, Who the hell uses Python 2)
+Requirements:
+- Python 3 (seriously, Who the hell uses Python 2)
 
--- Run pip install -r requirements.txt
+Install dependencies:
 
-## Running
-
--- Run python main.py
-
-Holy shit shocking i know 
+```bash
+pip install -r requirements.txt
