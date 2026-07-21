@@ -1,7 +1,7 @@
 ## Installation
 
 Requirements:
-- Python 3 (seriously, Who the hell uses Python 2)
+- Python 3 (seriously, who the hell uses Python 2?)
 
 Install dependencies:
 
@@ -9,19 +9,23 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-## Running
-
+Running
 ```bash
 python main.py
 ```
-Shocking i know
+> Shocking, I know.
 
-## Requirements
+Requirements:
 
--- Python 3 (or higher)
+Python 3 (or higher)
 
--- Pair of hands (Minimum 2 fingers)
+Pair of hands (minimum 2 fingers recommended)
+A computer
+A keyboard
+900 GB of DDR5 RAM
 
--- A Computer
+> Hehe i gotchu you dont actually need the last one
 
--- A Keyboard
+Editor's note
+
+> What? You thought i was actually gonna give some helpful tips and guide you? Welcome to Earth kiddo
